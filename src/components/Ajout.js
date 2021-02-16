@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 
 class Ajout extends Component {
@@ -39,7 +39,7 @@ class Ajout extends Component {
         let currentList = JSON.parse(localStorage.getItem('sneakersKey'))
         const id = currentList[currentList.length - 1].id + 1;
         localStorage.setItem('sneakersKey', JSON.stringify([...currentList,{...newSneakers,id}]))
-        toast("sneakersicle ajouté avec succes!")
+        // toast("sneakersicle ajouté avec succes!")
 }
     render() { 
          
@@ -62,20 +62,20 @@ class Ajout extends Component {
                                         </div>
                                     </div>
                                     <div className="mb-3">
-                                        <label  className="form-label">Titre</label>
-                                        <input type="text" className="form-control" value={this.state.marque} name="titre" onChange={this.handleChange}/>
+                                        <label  className="form-label">Marque</label>
+                                        <input type="text" className="form-control" value={this.state.marque} name="marque" onChange={this.handleChange}/>
                                     </div>
                                     <div className="mb-3">
-                                        <label  className="form-label">Texte</label>
-                                        <textarea type="text" className="form-control"  value={this.state.modele} name="article" onChange={this.handleChange}/>
+                                        <label  className="form-label">Modèle</label>
+                                        <textarea type="text" className="form-control"  value={this.state.modele} name="modele" onChange={this.handleChange}/>
                                     </div>
                                     <div className="mb-3">
-                                        <label  className="form-label">Auteur</label>
-                                        <input type="text" className="form-control"  value={this.state.disponible} name="auteur" onChange={this.handleChange}/>
+                                        <label  className="form-label">Prix</label>
+                                        <input type="text" className="form-control"  value={this.state.prix} name="prix" onChange={this.handleChange}/>
                                     </div>
                                     <div className="mb-3">
-                                        <label  className="form-label">Date</label>
-                                        <input type="text" className="form-control" value={this.state.prix} name="date" onChange={this.handleChange}/>
+                                        <label  className="form-label">Disponible</label>
+                                        <input type="checkbox" className="form-check" value={this.state.disponible} name="disponible" onChange={this.handleChange}/>
                                     </div>
                                     <button type="submit" className="btn btn-primary offset-1 col-10">Submit</button>
                             </form>
@@ -84,7 +84,7 @@ class Ajout extends Component {
                         </div>
                     </div>
                     </div>
-                    <ToastContainer />
+                    {/* <ToastContainer /> */}
             </>
          );
     }

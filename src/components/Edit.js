@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -8,12 +8,12 @@ class Edit extends Component {
     constructor(props) {
         super(props);
         this.initState = {
-            id: this.props.article.id,
-            image: this.props.article.image,
-            titre: this.props.article.titre,
-            article: this.props.article.article,
-            date: this.props.article.date,
-            auteur: this.props.article.auteur
+            id: this.props.sneaker.id,
+            image: this.props.sneaker.image,
+            marque: this.props.sneaker.marque,
+            modele: this.props.sneaker.modele,
+            prix: this.props.sneaker.prix,
+            disponible: this.props.sneaker.disponible
         }
         this.state = this.initState 
     }
@@ -27,23 +27,23 @@ class Edit extends Component {
         const img = this.state.image.match(/[a-zA-Z0-9-_]+\.(jpg|png)/)[0];
         let newArt = {
             id: this.state.id,
-            titre: this.state.titre,
-            article : this.state.article,
-            auteur : this.state.auteur,
-            date: this.state.date,
+            marque: this.state.marque,
+            modele : this.state.modele,
+            prix : this.state.prix,
+            disponible: this.state.disponible,
             image: img
         }
         this.props.handleSubmit(newArt)
-        toast("Article modifié avec succes!")
+        // toast("Article modifié avec succes!")
     }
     componentDidUpdate= ()=>{
-        const id = this.props.article.id;
+        const id = this.props.sneaker.id;
         if(id !== this.state.id){
-            this.setState(this.props.article);
+            this.setState(this.props.sneaker);
         }
     }
     render() { 
-        const {titre,article,auteur,date,} = this.state
+        const {marque,modele,prix,disponible} = this.state
             return ( 
                 <>
                     <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -60,21 +60,21 @@ class Edit extends Component {
                                             <input type="file" className="form-control" id="image"  name="image" onChange={this.handleChange} />
                                         </div>
                                         <div className="mb-3">
-                                            <label htmlFor="exampleInputEmail1" className="form-label">Titre</label>
-                                            <input type="text" className="form-control"  aria-describedby="emailHelp" name="titre" value={titre} onChange={this.handleChange}/>
+                                            <label htmlFor="exampleInputEmail1" className="form-label">Marque</label>
+                                            <input type="text" className="form-control"  aria-describedby="emailHelp" name="marque" value={marque} onChange={this.handleChange}/>
                                         </div>
                                         
                                         <div className="mb-3">
-                                            <label htmlFor="exampleInputPassword1" className="form-label">Texte</label>
-                                            <textarea type="text" className="form-control"  value={article} name="article" onChange={this.handleChange}/>
+                                            <label htmlFor="exampleInputPassword1" className="form-label">Modele</label>
+                                            <textarea type="text" className="form-control"  value={modele} name="modele" onChange={this.handleChange}/>
                                         </div>
                                         <div className="mb-3">
-                                            <label htmlFor="exampleInputPassword1" className="form-label">Auteur</label>
-                                            <input type="text" className="form-control"  value={auteur} name="auteur" onChange={this.handleChange}/>
+                                            <label htmlFor="exampleInputPassword1" className="form-label">Prix</label>
+                                            <input type="text" className="form-control"  value={prix} name="prix" onChange={this.handleChange}/>
                                         </div>
                                         <div className="mb-3">
-                                            <label htmlFor="exampleInputPassword1" className="form-label">Date</label>
-                                            <input type="text" className="form-control"  value={date} name="date" onChange={this.handleChange}/>
+                                            <label htmlFor="exampleInputPassword1" className="form-label">Disponible</label>
+                                            <input type="checkbox" className="form-check"  value={disponible} name="disponible" onChange={this.handleChange}/>
                                         </div>
                                         <button type="submit" className="btn btn-primary offset-1 col-10">Submit</button>
                                     </form>

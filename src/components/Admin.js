@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import Liste from "./Liste";
 import Edit from "./Edit";
 import Ajout from "./Ajout";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 class Admin extends Component {
   constructor(props) {
     super(props);
     this.state = {
       sneakers: JSON.parse(localStorage.getItem("sneakersKey")),
-      editArt: { id: "", marque: "", modele: "", disponible: "", prix: "" },
+      editSneakers: { id: "", marque: "", modele: "", disponible: "", prix: "" },
     };
   }
 
@@ -25,28 +25,28 @@ class Admin extends Component {
     }
   };
   removeArticle = index => {
-    let newArtList = [...this.state.sneakers];
-    const article = newArtList.filter((v, i) => {
+    let newSneakersList = [...this.state.sneakers];
+    const sneaker = newSneakersList.filter((v, i) => {
       return i !== index;
     });
-    this.setState({ sneakers: article }, () => {
+    this.setState({ sneakers: sneaker }, () => {
       localStorage.setItem("sneakersKey", JSON.stringify(this.state.sneakers));
     });
-    toast("Article supprimer");
+    // toast("Article supprimer");
   };
-  addArticle = newArt => {
-    let clonesneakers = [...this.state.sneakers, newArt];
+  addArticle = newSneaker => {
+    let clonesneakers = [...this.state.sneakers, newSneaker];
     this.setState({ sneakers: clonesneakers });
   };
   handleItem = index => {
-    const aEdit = this.state.sneakers[index];
-    this.setState({ editArt: aEdit });
+    const sEdit = this.state.sneakers[index];
+    this.setState({ editSneakers: sEdit });
   };
   editArticle = art => {
-    const newArtList = this.state.sneakers;
-    newArtList.forEach((item, index) => {
+    const newSneakersList = this.state.sneakers;
+    newSneakersList.forEach((item, index) => {
       if (art.id === item.id) {
-        newArtList[index] = art;
+        newSneakersList[index] = art;
       }
     });
     this.setState({ editArt: art });
@@ -66,7 +66,7 @@ class Admin extends Component {
           handleDelete={this.removeArticle}
           handleEdit={this.handleItem}
         />
-        <Edit article={this.state.editArt} handleSubmit={this.editArticle} />
+        <Edit sneaker={this.state.editSneakers} handleSubmit={this.editArticle} />
         <Ajout handleSubmit={this.addArticle} />
       </>
     );

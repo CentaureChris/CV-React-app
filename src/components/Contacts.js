@@ -109,8 +109,7 @@ if(!contact1 || contact1.length ===0){
                 </div>
                 
                 <div id="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2631.2425953781767!2d2.289673815670158!3d48.73906247927593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6770ae20dc735%3A0x5af37ee42437acde!2s1%20All%C3%A9e%20du%20Gange%2C%2092160%20Antony!5e0!3m2!1sfr!2sfr!4v1606392327429!5m2!1sfr!2sfr" width="100%" height="450" frameBorder="0" allowFullScreen="" aria-hidden="false" tabIndex="0" title="location"/>
-            </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44108.47638589965!2d2.261439010680891!3d48.75097557686981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e677114605c77f%3A0x40b82c3688b3ed0!2sAntony!5e0!3m2!1sfr!2sfr!4v1613516160414!5m2!1sfr!2sfr" width="100%" height="450" frameborder="0"  allowfullscreen="" aria-hidden="false" tabIndex="0" title="location"></iframe></div>
             <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">

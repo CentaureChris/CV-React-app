@@ -4,10 +4,8 @@
 img{
     width: 100px;
 }
-
-p:nth-of-type(1){
-    height: 200px;
-    overflow: scroll;
+td{
+    text-align: center;
 }
 fieldset{
     height: 500px;
@@ -18,9 +16,12 @@ fieldset{
     font-size: larger;
     font-weight: bolder;
 }
-.art_admin{
-    height: auto;
-}
+
 nav{
     position: fixed;
 }
+table{
+    text-align: center;
+    vertical-align: auto
+}
+
