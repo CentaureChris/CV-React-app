@@ -7,12 +7,7 @@ const Accueil =()=> {
   
     
         const sneakers = JSON.parse(localStorage.getItem('sneakersKey'))
-        // let articles = this.props.defaultPage
-        // if(!articles || articles.length === 0){
-        //     articles = this.props.data
-        // }
-        // console.log(articles)
-        // console.log(this.props.defaultPage)
+        
         
         return (
             

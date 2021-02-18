@@ -2,7 +2,6 @@ import React from 'react';
 import TextTransition, { presets } from "react-text-transition";
 import {FaPencilAlt, FaRegTrashAlt} from 'react-icons/fa'
 import {HiThumbDown, HiThumbUp} from 'react-icons/hi'
-
 import {FcAddDatabase} from 'react-icons/fc'
 
 
@@ -10,7 +9,7 @@ import {FcAddDatabase} from 'react-icons/fc'
 const Liste = (props) => {
 
     const TEXTS = [
-        "Binevenue dans l'espace administrateur!",
+        "Bienvenue dans l'espace administrateur!",
         "Ici vous pouvez ajouter modifier ou supprimer des articles",
         "Enjoy your Job ;)"
       ];
@@ -22,7 +21,8 @@ const Liste = (props) => {
             3000 
           );
         }, []); 
-      
+    
+        
 
     return (
         <>  
@@ -32,28 +32,39 @@ const Liste = (props) => {
             /></h1>
                             <table className="table table-striped mt-5">
                                 <thead>
-                                    <tr className="bg-light">
+                                    <tr className="bg-secondary text-white">
                                     <th>Article</th>
                                     <th scope="col">Id</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Modele</th>
                                     <th scope="col">Prix</th>
                                     <th scope="col">Disponibilité</th>
-                                    <th>Action</th>
+                                    <th width="15%">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody> 
                                     {props.rows.map((item,index)=>{
                                         return <tr key={item.id}>
-                                            <td>{index+1}</td><td>{item.marque}</td><td><img src={`images/${item.image}`} alt="logo"/></td><td className="art_admin"><p>{item.modele}</p></td><td>{item.prix}</td><td>{(item.disponible)?<HiThumbUp size={32} className="text-success"/>
-                           :<HiThumbDown size={32} className="text-warning" />}</td><td><button className="btn btn-success  m-2" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={function (){
+                                            <td>{index+1}</td><td>{item.marque}</td><td><img src={`images/${item.image}`} alt="logo"/></td><td className="art_admin"><p>{item.modele}</p></td><td>{item.prix}</td>
+                                            <td>
+                            {(item.disponible)
+                            ?<HiThumbUp size={32} className="text-success"/>
+                           :<HiThumbDown size={32} className="text-warning" />}</td><td>
+                                <div className="form-check form-switch col-3">
+                                    <input className="form-check-input " type="checkbox" id="flexSwitchCheckDefault" />
+                                    <label className="form-check-label" for="flexSwitchCheckDefault">Afficher</label>
+                                </div>
+                                <div className="row">
+                                
+                       <button className="btn btn-success col-12" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={function (){
                                                 props.handleEdit(index)
-                                            }}>Edit <FaPencilAlt /> </button><button className="btn btn-danger  m-2" onClick={()=>{
+                                            }}>Edit <FaPencilAlt /> </button><button className="btn btn-danger col-12 mt-1 mb-1" onClick={()=>{
                                                 (window.confirm('Confirmer la supression?'))
                                                 ?props.handleDelete(index)
                                                 :console.log('Supression annuler!')}
-                                            }>Delete <FaRegTrashAlt/></button></td>
-                                                
+                                            }>Delete <FaRegTrashAlt/></button>
+                                            </div>
+                                            </td>    
                                         </tr>
                                     })}
                                     

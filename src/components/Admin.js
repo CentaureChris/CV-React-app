@@ -3,6 +3,7 @@ import Liste from "./Liste";
 import Edit from "./Edit";
 import Ajout from "./Ajout";
 // import { toast } from "react-toastify";
+// import 'react-toastify/dist/ReactToastify.css';
 
 class Admin extends Component {
   constructor(props) {
@@ -32,8 +33,9 @@ class Admin extends Component {
     this.setState({ sneakers: sneaker }, () => {
       localStorage.setItem("sneakersKey", JSON.stringify(this.state.sneakers));
     });
+  }; 
     // toast("Article supprimer");
-  };
+  
   addArticle = newSneaker => {
     let clonesneakers = [...this.state.sneakers, newSneaker];
     this.setState({ sneakers: clonesneakers });
@@ -58,6 +60,7 @@ class Admin extends Component {
       localStorage.setItem("sneakersKey", JSON.stringify(this.states.sneakers));
     }
   };
+  
   render() {
     return (
       <>
@@ -65,9 +68,11 @@ class Admin extends Component {
           rows={this.state.sneakers}
           handleDelete={this.removeArticle}
           handleEdit={this.handleItem}
+          
         />
         <Edit sneaker={this.state.editSneakers} handleSubmit={this.editArticle} />
         <Ajout handleSubmit={this.addArticle} />
+        
       </>
     );
   }

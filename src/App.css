@@ -1,17 +1,11 @@
-/* .card{
-    max-width: 28rem;
-} */
+
 img{
     width: 100px;
 }
 td{
     text-align: center;
 }
-fieldset{
-    height: 500px;
-    font-size: large;
-    overflow: auto;
-}
+
 .active{
     font-size: larger;
     font-weight: bolder;
@@ -22,6 +16,5 @@ nav{
 }
 table{
     text-align: center;
-    vertical-align: auto
 }
 
