@@ -14,27 +14,29 @@ const Accueil =()=> {
             <>
                           <div className="bg-light p-5">
                 <div className="container text-center">
-                    <h1 className="display-4">AIR JORDAN</h1>
-                    <p className="lead"> Vous voulez des Sneakers, visitez C&V ! </p>
+                    <h1 className="display-2">AIR JORDAN</h1>
+                    <p className="lead"> Vous voulez des Sneakers, visitez C&C  ! </p>
                 </div>
             </div>
             <div className="row row-cols-1 row-cols-md-2 g-4 mt-1 container-fluid text-center">
                     {sneakers.map((sneaker, index) =>{
-                        return <div className="col" key={sneakers.id}>
-                            <div className="card">
-                                <img src={`images/${sneaker.image}`} className="card-img-top" alt="..." id="imgac" height={600}/>
+                        return sneaker.display && <div className="col" key={sneaker.id}>
+                            <div className="card" >
+                                <img src={`images/${sneaker.image}`} className="card-img-top" alt="..."  height={600}/>
                                 <div className="card-body">
-                                <h5 className="card-title text-center">Sneakers N°00{sneaker.id}</h5>
+                                <h5 className="card-title text-center">Modèle: {sneaker.modele}</h5>
                                     <ul className="list-group list-group-flush">
                                         <li className="list-group-item">Marque: {sneaker.marque}</li>
-                                        <li className="list-group-item">Modele: {sneaker.modele}</li>
                                         <li className="list-group-item">Prix: {sneaker.prix}€</li>
-                                    </ul>
-                                    {sneaker.disponible
+                                        <li className="list-group-item"> {sneaker.disponible
                                     ?<button className=" btn btn-success "data-bs-toggle="modal" data-bs-target={`#num${index}`}>Commander</button>
-                                    :<button disabled={true} className="btn btn-warning ">Indisponible</button>
-                                    }
-   
+                                    :<button disabled={true} className="btn btn-warning">Indisponible</button>
+                                    }</li>
+                                    </ul>
+                                    <div className="card-footer text-end"><small className="text-muted">Sneakers N°00{sneaker.id}</small></div>
+                                    
+                                   
+                                    
                                     <div className="modal fade" id={`num${index}`} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div className="modal-dialog">
                                         <div className="modal-content">

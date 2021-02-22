@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import Liste from "./Liste";
 import Edit from "./Edit";
 import Ajout from "./Ajout";
-// import { toast } from "react-toastify";
-// import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 class Admin extends Component {
   constructor(props) {
     super(props);
     this.state = {
       sneakers: JSON.parse(localStorage.getItem("sneakersKey")),
-      editSneakers: { id: "", marque: "", modele: "", disponible: "", prix: "" },
+      editSneakers: { id: "", marque: "", modele: "", disponible: "", prix: "" ,display:""},
     };
   }
 
@@ -33,8 +33,9 @@ class Admin extends Component {
     this.setState({ sneakers: sneaker }, () => {
       localStorage.setItem("sneakersKey", JSON.stringify(this.state.sneakers));
     });
+    toast("Article supprimer",{className:"bg-warning text-white"});
   }; 
-    // toast("Article supprimer");
+    
   
   addArticle = newSneaker => {
     let clonesneakers = [...this.state.sneakers, newSneaker];
@@ -60,6 +61,21 @@ class Admin extends Component {
       localStorage.setItem("sneakersKey", JSON.stringify(this.states.sneakers));
     }
   };
+  handleDisplay =(id)=>{
+    this.setState(prevState =>{
+      const newShoes = prevState.sneakers.map((sneaker)=>{
+        const newSneaker = {...sneaker}
+        if(sneaker.id === id){
+          newSneaker.display = !sneaker.display
+        }
+        return newSneaker
+      })
+      localStorage.setItem("sneakersKey", JSON.stringify(newShoes));
+      return {...prevState,sneakers: newShoes}
+    })
+    
+  }
+
   
   render() {
     return (
@@ -68,7 +84,7 @@ class Admin extends Component {
           rows={this.state.sneakers}
           handleDelete={this.removeArticle}
           handleEdit={this.handleItem}
-          
+          aff = {this.handleDisplay}
         />
         <Edit sneaker={this.state.editSneakers} handleSubmit={this.editArticle} />
         <Ajout handleSubmit={this.addArticle} />

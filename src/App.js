@@ -10,10 +10,10 @@ function App() {
  const sneakers = localStorage.getItem('sneakersKey')
  if(!sneakers || JSON.parse(sneakers).length === 0){
    const sneakers = [
-    {id:1001, marque:"Jordan", modele:'retro 11', image:'jordan11.jpg', disponible:true, prix:220},
-    {id:1002, marque:"Jordan", modele:'retro 1', image:'jordan1.jpg', disponible:false, prix:280},
-    {id:1003, marque:"Jordan", modele:'retro 6', image:'jordan6.jpg', disponible:true, prix:120},
-    {id:1004, marque:"Jordan", modele:'retro 4', image:'jordan4.jpg', disponible:false, prix:320}
+    {id:1001, marque:"JORDAN", modele:'Retro 11 Hairess', image:'jordan11.jpg', disponible:true, prix:220,display:true},
+    {id:1002, marque:"JORDAN", modele:'Retro 1 High J Balvin', image:'jordan1.jpg', disponible:false, prix:280,display:true},
+    {id:1003, marque:"JORDAN", modele:'Retro 6 DMP', image:'jordan6.jpg', disponible:true, prix:120,display:true},
+    {id:1004, marque:"JORDAN", modele:'Retro 4 Metalic Red', image:'jordan4.jpg', disponible:false, prix:320,display:false}
   ]
    localStorage.setItem('sneakersKey',JSON.stringify(sneakers))
  }

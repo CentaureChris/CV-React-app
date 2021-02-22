@@ -6,7 +6,10 @@ import {FcAddDatabase} from 'react-icons/fc'
 
 
 
+
 const Liste = (props) => {
+
+
 
     const TEXTS = [
         "Bienvenue dans l'espace administrateur!",
@@ -14,15 +17,15 @@ const Liste = (props) => {
         "Enjoy your Job ;)"
       ];
       const [index, setIndex] = React.useState(0);
-      
         React.useEffect(() => {
           const intervalId = setInterval(() =>
             setIndex(index => index + 1),
             3000 
           );
-        }, []); 
+        }, []);
+
+        const sneaker = JSON.parse(localStorage.getItem('sneakersKey'))
     
-        
 
     return (
         <>  
@@ -51,8 +54,11 @@ const Liste = (props) => {
                             ?<HiThumbUp size={32} className="text-success"/>
                            :<HiThumbDown size={32} className="text-warning" />}</td><td>
                                 <div className="form-check form-switch col-3">
-                                    <input className="form-check-input " type="checkbox" id="flexSwitchCheckDefault" />
-                                    <label className="form-check-label" for="flexSwitchCheckDefault">Afficher</label>
+                                    <input className="form-check-input " type="checkbox" id="flexSwitchCheckDefault" checked={item.display} onChange={()=>{
+                                        props.aff(item.id)
+                                    }}/>
+                                    <label className="form-check-label" htmlFor="flexSwitchCheckDefault" >Afficher</label>
+                                
                                 </div>
                                 <div className="row">
                                 

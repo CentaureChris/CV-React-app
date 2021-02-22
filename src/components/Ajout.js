@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 class Ajout extends Component {
@@ -12,6 +12,7 @@ class Ajout extends Component {
             marque:"",
             modele:"",
             disponible:"",
+            display:"",
             prix:0
          }
         this.state = this.initState
@@ -25,7 +26,7 @@ class Ajout extends Component {
         e.preventDefault();
         let img = '';
         if(this.state.image){
-          img = this.state.image.match(/[a-zA-Z0-9-_]+\.(jpg|png)/)[0];
+          img = this.state.image.match(/[a-zA-Z0-9-_]+\.(jpg|png|jpeg)/)[0];
         }
         let newSneakers = {
             marque : this.state.marque,
@@ -39,7 +40,7 @@ class Ajout extends Component {
         let currentList = JSON.parse(localStorage.getItem('sneakersKey'))
         const id = currentList[currentList.length - 1].id + 1;
         localStorage.setItem('sneakersKey', JSON.stringify([...currentList,{...newSneakers,id}]))
-        // toast("sneakersicle ajouté avec succes!")
+        toast("Sneakers ajouté avec succes!")
 }
     render() { 
          
@@ -77,6 +78,10 @@ class Ajout extends Component {
                                         <label  className="form-label">Disponible</label>
                                         <input type="checkbox" className="form-check" value={this.state.disponible} name="disponible" onChange={this.handleChange}/>
                                     </div>
+                                    <div className="mb-3">
+                                        <label  className="form-label">Afficher</label>
+                                        <input type="checkbox" className="form-check" value={this.state.display} name="display" onChange={this.handleChange}/>
+                                    </div>
                                     <button type="submit" className="btn btn-primary offset-1 col-10">Submit</button>
                             </form>
                         </div>
@@ -84,7 +89,7 @@ class Ajout extends Component {
                         </div>
                     </div>
                     </div>
-                    {/* <ToastContainer /> */}
+                    <ToastContainer />
             </>
          );
     }

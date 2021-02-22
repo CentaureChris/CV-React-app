@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
-// import { toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -13,13 +13,14 @@ class Edit extends Component {
             marque: this.props.sneaker.marque,
             modele: this.props.sneaker.modele,
             prix: this.props.sneaker.prix,
-            disponible: this.props.sneaker.disponible
+            disponible: this.props.sneaker.disponible,
+            display:this.props.sneaker.display
         }
         this.state = this.initState 
     }
     handleChange = (e) =>{
-        const {name,value} = e.target;
-        const val = value;
+        const {name,value,checked,type} = e.target;
+        const val = type === "checkbox"?checked :value;
         this.setState({[name]:val})
     }
     handleSubmit = (e)=>{
@@ -31,10 +32,11 @@ class Edit extends Component {
             modele : this.state.modele,
             prix : this.state.prix,
             disponible: this.state.disponible,
-            image: img
+            image: img,
+            display: this.state.display
         }
         this.props.handleSubmit(newArt)
-        // toast("Article modifié avec succes!")
+        toast("Article modifié avec succes!", {className:"bg-info text-dark"})
     }
     componentDidUpdate= ()=>{
         const id = this.props.sneaker.id;
@@ -43,7 +45,7 @@ class Edit extends Component {
         }
     }
     render() { 
-        const {marque,modele,prix,disponible} = this.state
+        const {marque,modele,prix,disponible,display} = this.state
             return ( 
                 <>
                     <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -57,7 +59,7 @@ class Edit extends Component {
                                     <form onSubmit={this.handleSubmit}>
                                         <div className="col-md-12">
                                             <label htmlFor="image" className="form-label">Image</label>
-                                            <input type="file" className="form-control" id="image"  name="image" onChange={this.handleChange} />
+                                            <input type="file" className="form-control" id="img"  name="image" onChange={this.handleChange} />
                                         </div>
                                         <div className="mb-3">
                                             <label htmlFor="exampleInputEmail1" className="form-label">Marque</label>
@@ -74,7 +76,11 @@ class Edit extends Component {
                                         </div>
                                         <div className="mb-3">
                                             <label htmlFor="exampleInputPassword1" className="form-label">Disponible</label>
-                                            <input type="checkbox" className="form-check"  value={disponible} name="disponible" onChange={this.handleChange}/>
+                                            <input type="checkbox" className="form-check"  checked={disponible} name="disponible" onChange={this.handleChange}/>
+                                        </div>
+                                        <div className="mb-3">
+                                            <label htmlFor="exampleInputPassword1" className="form-label">Afficher</label>
+                                            <input type="checkbox" className="form-check"  checked={display} name="display" onChange={this.handleChange}/>
                                         </div>
                                         <button type="submit" className="btn btn-primary offset-1 col-10">Submit</button>
                                     </form>
