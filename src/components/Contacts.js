@@ -100,7 +100,7 @@ if(!contact1 || contact1.length ===0){
                         <FaPaperPlane size={30} style={{ fill: 'green' }}/>
                         <p><a href="mailto:c.centaure@gmail.com">c.centaure@gmail.com</a></p>
                         <AiFillGithub size={30} style={{ fill: 'purple' }}/>
-                        <p>....Comming Soon...</p>
+                        <p><a href="https://github.com/CentaureChris" target="blank">Github</a></p>
                         <SiGooglemaps size={30} style={{ fill: 'darkblue' }}/>
                         <p> 1 allée du gange  92160 Antony</p>
                         <FcPhoneAndroid size={30}/>
