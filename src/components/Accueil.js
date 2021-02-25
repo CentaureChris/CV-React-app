@@ -12,7 +12,7 @@ const Accueil =()=> {
         return (
             
             <>
-                          <div className="bg-light p-5">
+                <div className="bg-light p-5">
                 <div className="container text-center">
                     <h1 className="display-2">AIR JORDAN</h1>
                     <p className="lead"> Vous voulez des Sneakers, visitez C&C  ! </p>
@@ -21,7 +21,7 @@ const Accueil =()=> {
             <div className="row row-cols-1 row-cols-md-2 g-4 mt-1 container-fluid text-center">
                     {sneakers.map((sneaker, index) =>{
                         return sneaker.display && <div className="col" key={sneaker.id}>
-                            <div className="card m-4" >
+                            <div className="card m-4 red" >
                                 <img src={`images/${sneaker.image}`} className="card-img-top" alt="..."  height={600}/>
                                 <div className="card-body">
                                 <h5 className="card-title text-center">Modèle: {sneaker.modele}</h5>

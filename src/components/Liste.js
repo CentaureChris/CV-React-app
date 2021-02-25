@@ -47,8 +47,8 @@ const Liste = (props) => {
                                 </thead>
                                 <tbody> 
                                     {props.rows.map((item,index)=>{
-                                        return <tr key={item.id}>
-                                            <td>{index+1}</td><td>{item.marque}</td><td><img src={`images/${item.image}`} alt="logo"/></td><td className="art_admin"><p>{item.modele}</p></td><td>{item.prix}</td>
+                                        return <tr key={item.id} className="text-white fw-bolder">
+                                            <td>{index+1}</td><td>{item.marque}</td><td><img src={`images/${item.image}`} alt="logo" className="imglist"/></td><td className="art_admin"><p>{item.modele}</p></td><td>{item.prix}</td>
                                             <td>
                             {(item.disponible)
                             ?<HiThumbUp size={32} className="text-success"/>
