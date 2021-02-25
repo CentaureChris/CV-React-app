@@ -12,7 +12,7 @@ const Accueil =()=> {
         return (
             
             <>
-                <div className="bg-light p-5">
+                <div className="p-5">
                 <div className="container text-center">
                     <h1 className="display-2">AIR JORDAN</h1>
                     <p className="lead"> Vous voulez des Sneakers, visitez C&C  ! </p>

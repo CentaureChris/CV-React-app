@@ -39,3 +39,7 @@ article,section{
 .imglist:hover{
     width: 150px;
 }
+.p-5{
+    color: white;
+    font-weight: 900;
+}
