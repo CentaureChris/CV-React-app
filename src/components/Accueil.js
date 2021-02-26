@@ -13,9 +13,18 @@ const Accueil =()=> {
             
             <>
                 <div className="p-5">
-                <div className="container text-center">
-                    <h1 className="display-2">AIR JORDAN</h1>
-                    <p className="lead"> Vous voulez des Sneakers, visitez C&C  ! </p>
+                <div className="container" id="anim">
+                <div id="title">
+                    <span id="A1" class="ti">A</span>
+                    <span id="I" class="ti">I</span>
+                    <span id="R1" class="ti">R</span>
+                    <span id="J" class="ti">J</span>
+                    <span id="O" class="ti">O</span>
+                    <span id="R" class="ti">R</span>
+                    <span id="D" class="ti">D</span>
+                    <span id="A" class="ti">A</span>
+                    <span id="N" class="ti">N</span>
+                </div>
                 </div>
             </div>
             <div className="row row-cols-1 row-cols-md-2 g-4 mt-1 container-fluid text-center">
