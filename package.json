@@ -21,6 +21,7 @@
     "webfontloader": "^1.6.28"
   },
   "scripts": {
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
