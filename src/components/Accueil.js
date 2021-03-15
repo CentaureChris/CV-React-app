@@ -15,15 +15,15 @@ const Accueil =()=> {
                 <div className="p-5">
                 <div className="container" id="anim">
                 <div id="title">
-                    <span id="A1" class="ti">A</span>
-                    <span id="I" class="ti">I</span>
-                    <span id="R1" class="ti">R </span>
-                    <span id="J" class="ti">J</span>
-                    <span id="O" class="ti">O</span>
-                    <span id="R" class="ti">R</span>
-                    <span id="D" class="ti">D</span>
-                    <span id="A" class="ti">A</span>
-                    <span id="N" class="ti">N</span>
+                    <span id="A1" className="ti">A</span>
+                    <span id="I" className="ti">I</span>
+                    <span id="R1" className="ti">R </span>
+                    <span id="J" className="ti">J</span>
+                    <span id="O" className="ti">O</span>
+                    <span id="R" className="ti">R</span>
+                    <span id="D" className="ti">D</span>
+                    <span id="A" className="ti">A</span>
+                    <span id="N" className="ti">N</span>
                 </div>
                 </div>
             </div>

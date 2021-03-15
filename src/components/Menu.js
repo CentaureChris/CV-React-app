@@ -29,7 +29,7 @@ const Menu= () => {
                 <BrowserRouter >
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
-                    <NavLink className="navbar-brand" activeClassName="active" to="/"><img src="images/logoJordan.png" alt=".." /> MY Blog</NavLink>
+                    <NavLink className="navbar-brand" activeClassName="active" to="/"><img src="../images/logoJordan.png" alt=".." /> MY Blog</NavLink>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     </button>

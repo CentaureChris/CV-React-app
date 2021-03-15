@@ -12,6 +12,9 @@ td{
     font-weight: bolder;
 }
 
+nav{
+    position: fixed;
+}
 table{
     text-align: center;
 }

@@ -38,10 +38,10 @@ const Presentation = () => {
                             <li className="list-group-item">Secours au combat</li>
                             <li className="list-group-item">Programmation informatique:
                                 <div className="col text-center">
-                                    <img src="images/html.svg"/><img src="images/css.png"/><img src="images/js.png"/>
+                                    <img src="images/html.svg" alt=".."/><img src="images/css.png" alt=".."/><img src="images/js.png" alt=".."/>
                                 </div>
                                 <div className="col text-center">
-                                <img src="images/mysql.svg"/> <img src="images/react.jpeg"/><img src="images/jquerry.jpg"/><img src="images/php-logo.png"/><img src="images/ajax.png"/>
+                                <img src="images/mysql.svg" alt=".." /> <img src="images/react.jpeg" alt=".."/><img src="images/jquerry.jpg" alt=".."/><img src="images/php-logo.png" alt=".."/><img src="images/ajax.png" alt=".."/>
                                 </div>
                             </li>
                            
