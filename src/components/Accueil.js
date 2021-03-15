@@ -17,7 +17,7 @@ const Accueil =()=> {
                 <div id="title">
                     <span id="A1" class="ti">A</span>
                     <span id="I" class="ti">I</span>
-                    <span id="R1" class="ti">R</span>
+                    <span id="R1" class="ti">R </span>
                     <span id="J" class="ti">J</span>
                     <span id="O" class="ti">O</span>
                     <span id="R" class="ti">R</span>
@@ -54,8 +54,7 @@ const Accueil =()=> {
                                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div className="modal-body">
-                                        <div className="modal-body">
-                                        <div className="card mb-3 " >
+                                        <div className="card mb-3 pay" >
                                             <div className="row g-0">
                                                 <div className="col-md-4">
                                                 <img src={`images/${sneaker.image}`} width="150" alt="..."/>
@@ -84,7 +83,6 @@ const Accueil =()=> {
                                                         <button type="submit" className="btn btn-outline-warning offset-8" data-bs-dismiss="modal">Valider</button>
                                                         </form>
                                                 </div>
-                                                </div>
                                             </div>
                                             </div>
                                         </div>
@@ -100,9 +98,7 @@ const Accueil =()=> {
                             </div>
                         </div>
                     })}
-                
             </div>
-                
             </>
           );
     }

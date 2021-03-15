@@ -37,7 +37,7 @@ const Menu= () => {
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item"><NavLink className="nav-link " activeClassName="active" aria-current="page"to="/" exact><FaHome/> Accueil</NavLink></li>
                         <li className="nav-item">
-                        <NavLink className="nav-link" activeClassName="active" to="/presentation"><FaHandshake/> Presentation</NavLink >
+                        <NavLink className="nav-link" activeClassName="active" to="/presentation"><FaHandshake/>C.V Presentation </NavLink >
                         </li>
                         <li className="nav-item">
                         <NavLink className="nav-link" activeClassName="active" to="/contacts"><GrContactInfo className="bg-white"/> Contacts</NavLink >
